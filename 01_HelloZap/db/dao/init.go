@@ -3,6 +3,7 @@ package dao
 import (
 	"GoZapLearn/01_HelloZap/config"
 	"GoZapLearn/01_HelloZap/db/model"
+	"GoZapLearn/01_HelloZap/logger"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
@@ -19,6 +20,7 @@ func init() {
 			SingularTable: false,
 			TablePrefix:   "ZipLearn_",
 		},
+		Logger: logger.GormLog,
 	})
 	if err != nil {
 		panic(err)

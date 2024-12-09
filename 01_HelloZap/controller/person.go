@@ -2,6 +2,7 @@ package controller
 
 import (
 	"GoZapLearn/01_HelloZap/db/model"
+	"GoZapLearn/01_HelloZap/logger"
 	"GoZapLearn/01_HelloZap/service"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -12,7 +13,8 @@ func GetPerson(c *gin.Context) {
 	idString := c.Query("id")
 	id, err := strconv.Atoi(idString)
 	if err != nil {
-		panic(err)
+		logger.GinLogger.Error("绑定失败")
+		return
 	}
 	if person, err := service.GetPerson(id); err != nil {
 		panic(err)

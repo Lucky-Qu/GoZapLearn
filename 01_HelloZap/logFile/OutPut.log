@@ -1,0 +1,77 @@
+2024-12-09T15:01:29.882+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "GET", "path": "/Person", "status": 200, "ip": "127.0.0.1", "latency": "1.694917ms", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:02:22.930+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT DATABASE()", "elapsed": "851.25µs", "rows": -1}
+2024-12-09T18:02:22.941+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'zap_learn%' ORDER BY SCHEMA_NAME='zap_learn' DESC,SCHEMA_NAME limit 1", "elapsed": "10.234166ms", "rows": 1}
+2024-12-09T18:02:22.943+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'Zap_Learn' AND table_name = 'ZipLearn_people' AND table_type = 'BASE TABLE'", "elapsed": "2.595542ms", "rows": -1}
+2024-12-09T18:02:35.214+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "INSERT INTO `ZipLearn_people` (`created_at`,`updated_at`,`deleted_at`,`name`,`age`) VALUES ('2024-12-09 18:02:35.192','2024-12-09 18:02:35.192',NULL,'LuckyQu',18)", "elapsed": "22.236916ms", "rows": 1}
+2024-12-09T18:02:35.214+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "POST", "path": "/Person", "status": 200, "ip": "127.0.0.1", "latency": "23.14575ms", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:02:38.221+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT * FROM `ZipLearn_people` WHERE id = 1 AND `ZipLearn_people`.`deleted_at` IS NULL", "elapsed": "1.292083ms", "rows": 0}
+2024-12-09T18:02:38.221+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "GET", "path": "/Person", "status": 200, "ip": "127.0.0.1", "latency": "1.791166ms", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:03:03.241+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT * FROM `ZipLearn_people` WHERE id = 2 AND `ZipLearn_people`.`deleted_at` IS NULL", "elapsed": "1.968875ms", "rows": 1}
+2024-12-09T18:03:03.242+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "GET", "path": "/Person", "status": 200, "ip": "127.0.0.1", "latency": "3.179166ms", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:03:13.111+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT * FROM `ZipLearn_people` WHERE id = 3 AND `ZipLearn_people`.`deleted_at` IS NULL", "elapsed": "684.167µs", "rows": 1}
+2024-12-09T18:03:13.111+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "GET", "path": "/Person", "status": 200, "ip": "127.0.0.1", "latency": "1.085ms", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:03:18.862+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "DELETE FROM `ZipLearn_people` WHERE id = 2", "elapsed": "4.881708ms", "rows": 1}
+2024-12-09T18:03:18.862+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "DELETE", "path": "/Person/2", "status": 200, "ip": "127.0.0.1", "latency": "5.026333ms", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:03:27.083+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "UPDATE `ZipLearn_people` SET `updated_at`='2024-12-09 18:03:27.08',`name`='LuckyQu',`age`=30 WHERE id = 3 AND `ZipLearn_people`.`deleted_at` IS NULL", "elapsed": "3.5055ms", "rows": 1}
+2024-12-09T18:03:27.083+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "PUT", "path": "/Person/3", "status": 200, "ip": "127.0.0.1", "latency": "3.8915ms", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:08:59.175+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT DATABASE()", "elapsed": "265.917µs", "rows": -1}
+2024-12-09T18:08:59.178+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'zap_learn%' ORDER BY SCHEMA_NAME='zap_learn' DESC,SCHEMA_NAME limit 1", "elapsed": "2.943667ms", "rows": 1}
+2024-12-09T18:08:59.181+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'Zap_Learn' AND table_name = 'ZipLearn_people' AND table_type = 'BASE TABLE'", "elapsed": "3.135708ms", "rows": -1}
+2024-12-09T18:09:03.521+0800	[31merror[0m	controller/person.go:16	GoZapLearn/01_HelloZap/controller.GetPerson	绑定失败
+GoZapLearn/01_HelloZap/controller.GetPerson
+	/Users/luckyqu/Projects/Golang/GoZapLearn/01_HelloZap/controller/person.go:16
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1
+	/Users/luckyqu/Projects/Golang/GoZapLearn/01_HelloZap/middleware/middleware.go:12
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/Users/luckyqu/sdk/go1.23.2/src/net/http/server.go:3210
+net/http.(*conn).serve
+	/Users/luckyqu/sdk/go1.23.2/src/net/http/server.go:2092
+2024-12-09T18:09:03.521+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "GET", "path": "/Person", "status": 200, "ip": "127.0.0.1", "latency": "277.125µs", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:09:08.683+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT * FROM `ZipLearn_people` WHERE id = 3 AND `ZipLearn_people`.`deleted_at` IS NULL", "elapsed": "2.055208ms", "rows": 1}
+2024-12-09T18:09:08.683+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "GET", "path": "/Person", "status": 200, "ip": "127.0.0.1", "latency": "2.658042ms", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:09:13.344+0800	[31merror[0m	controller/person.go:16	GoZapLearn/01_HelloZap/controller.GetPerson	绑定失败
+GoZapLearn/01_HelloZap/controller.GetPerson
+	/Users/luckyqu/Projects/Golang/GoZapLearn/01_HelloZap/controller/person.go:16
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1
+	/Users/luckyqu/Projects/Golang/GoZapLearn/01_HelloZap/middleware/middleware.go:12
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/luckyqu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/Users/luckyqu/sdk/go1.23.2/src/net/http/server.go:3210
+net/http.(*conn).serve
+	/Users/luckyqu/sdk/go1.23.2/src/net/http/server.go:2092
+2024-12-09T18:09:13.344+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "GET", "path": "/Person", "status": 200, "ip": "127.0.0.1", "latency": "219.041µs", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:09:16.707+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "SELECT * FROM `ZipLearn_people` WHERE id = 3 AND `ZipLearn_people`.`deleted_at` IS NULL", "elapsed": "1.009833ms", "rows": 1}
+2024-12-09T18:09:16.707+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "GET", "path": "/Person", "status": 200, "ip": "127.0.0.1", "latency": "1.407583ms", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
+2024-12-09T18:09:26.564+0800	[34minfo[0m	logger/gormLogger.go:60	GoZapLearn/01_HelloZap/logger.GormLogger.Trace	Query executed	{"sql": "INSERT INTO `ZipLearn_people` (`created_at`,`updated_at`,`deleted_at`,`name`,`age`) VALUES ('2024-12-09 18:09:26.561','2024-12-09 18:09:26.561',NULL,'',0)", "elapsed": "4.041791ms", "rows": 1}
+2024-12-09T18:09:26.565+0800	[34minfo[0m	middleware/middleware.go:14	GoZapLearn/01_HelloZap/routes.NewRouter.LogMiddleware.func1	HTTP Request	{"method": "POST", "path": "/Person", "status": 200, "ip": "127.0.0.1", "latency": "4.787458ms", "user-agent": "PostmanRuntime/7.43.0", "error": ""}
