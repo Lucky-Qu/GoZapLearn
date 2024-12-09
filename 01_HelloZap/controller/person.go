@@ -29,7 +29,7 @@ func GetPerson(c *gin.Context) {
 func CreatePerson(c *gin.Context) {
 	var person model.Person
 	if err := c.ShouldBind(&person); err != nil {
-		panic(err)
+		logger.GinLogger.Error("绑定出错")
 		return
 	}
 	if err := service.CreatePerson(&person); err != nil {

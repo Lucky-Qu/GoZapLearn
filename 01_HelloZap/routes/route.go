@@ -9,8 +9,13 @@ import (
 )
 
 func NewRouter() *gin.Engine {
-	router := gin.Default()
+	router := gin.New()
 	router.Use(middleware.LogMiddleware(logger.GinLogger))
+	router.Use(gin.Recovery())
+	err := router.SetTrustedProxies([]string{"127.0.0.1"})
+	if err != nil {
+		panic(err)
+	}
 	router.GET("/Person", controller.GetPerson)
 	router.POST("/Person", controller.CreatePerson)
 	router.DELETE("/Person/:id", controller.DeletePerson)
